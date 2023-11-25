@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
     var btnResultado = document.getElementById("resultado");
     var btnLimparTela = document.getElementById("limparTela");
     var btnApagarAnterior = document.getElementById("apagarAnterior");
+    
+    var btnConversion = document.getElementById("conversion");
 
     listenerBtn.push(document.getElementById("ponto"));
 
@@ -29,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
     listenerBtn.push(document.getElementById("num7"));
     listenerBtn.push(document.getElementById("num8"));
     listenerBtn.push(document.getElementById("num9"));
+
 
     //Adicionando evento de click
     for (var i = 0; i < listenerBtn.length; i++) {
@@ -103,4 +106,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function convertir() {
+        var gradosFahrenheit = (tela.value * 9/5) + 32;
+        tela.value = gradosFahrenheit.toFixed(2); // Mostrar el resultado con dos decimales
+    }
+    
+    btnConversion.onclick = function () {
+        convertir();
+    }
+    
 });
